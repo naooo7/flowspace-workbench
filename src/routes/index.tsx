@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Bell, CalendarDays, ChevronRight, FileText, Flame } from "lucide-react";
+import { Bell, CalendarDays, ChevronRight, FileText } from "lucide-react";
 import { Screen } from "@/components/app-shell";
 import { Button } from "@/components/ui/button";
 import { findMaterial, todaysFocus, user } from "@/data/prototype";
