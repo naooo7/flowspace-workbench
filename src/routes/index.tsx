@@ -4,6 +4,7 @@ import { Screen } from "@/components/app-shell";
 import { Button } from "@/components/ui/button";
 import { findMaterial, todaysFocus, user } from "@/data/prototype";
 import { dayKey, formatDuration, needsReview, streak, summarize, useActivity } from "@/lib/activity";
+import { useInstitution } from "@/lib/institution";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,6 +28,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const institution = useInstitution();
   const data = useActivity();
   const attempts = data?.attempts ?? [];
   const reviewCount = needsReview(attempts).length;
