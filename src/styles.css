@@ -41,6 +41,9 @@
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
   --shadow-soft: var(--shadow-soft);
+  --color-warm: var(--warm);
+  --color-warm-soft: var(--warm-soft);
+  --color-primary-soft: var(--primary-soft);
   --shadow-raised: var(--shadow-raised);
 }
 
@@ -71,6 +74,9 @@
   --input: oklch(0.915 0.006 85);
   --ring: oklch(0.44 0.088 245);
   --shadow-soft: 0 1px 2px oklch(0.2 0.01 260 / 0.05);
+  --warm: oklch(0.74 0.16 60);
+  --warm-soft: oklch(0.95 0.04 75);
+  --primary-soft: oklch(0.94 0.025 245);
   --shadow-raised: 0 8px 24px -12px oklch(0.2 0.01 260 / 0.22);
 }
 
@@ -100,6 +106,9 @@
   --input: oklch(0.3 0.008 265);
   --ring: oklch(0.72 0.085 240);
   --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.3);
+  --warm: oklch(0.78 0.15 60);
+  --warm-soft: oklch(0.32 0.05 60);
+  --primary-soft: oklch(0.3 0.04 245);
   --shadow-raised: 0 8px 24px -12px oklch(0 0 0 / 0.5);
 }
 
