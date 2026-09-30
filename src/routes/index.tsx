@@ -72,7 +72,7 @@ function Home() {
         <h1 className="text-[28px] font-bold leading-tight tracking-[-0.025em]" suppressHydrationWarning>
           {greeting}, {user.name}.
         </h1>
-        <p className="mt-0.5 text-[15px] text-muted-foreground">Preparing for {user.target}</p>
+        <p className="mt-0.5 text-[15px] text-muted-foreground">Preparing for {institution?.short ?? "your exam"}</p>
       </div>
 
       <section aria-label="Streak" className="flex items-center gap-3 rounded-2xl border border-border bg-surface px-3.5 py-3 shadow-soft">
