@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Bell, CalendarDays, ChevronRight, FileText, Flame } from "lucide-react";
+import { Bell, CalendarDays, ChevronRight, FileText } from "lucide-react";
 import { Screen } from "@/components/app-shell";
 import { Button } from "@/components/ui/button";
 import { findMaterial, todaysFocus, user } from "@/data/prototype";
@@ -54,29 +54,30 @@ function Home() {
 
   return (
     <Screen>
-      <header className="mb-5 flex items-start justify-between">
-        <div>
-          <p className="relative inline-block text-[19px] font-semibold tracking-[-0.02em]">
-            Fundamental<span className="text-primary">.</span>
-            <span aria-hidden="true" className="absolute -bottom-1 left-0 h-[3px] w-[110%] -rotate-1 rounded-full bg-primary/20" />
-          </p>
-        </div>
-        <button type="button" aria-label="Notifications" className="relative mt-1 text-foreground/80">
+      <header className="mb-4 flex items-start justify-between">
+        <p className="relative inline-block text-[19px] font-bold leading-none tracking-[-0.03em]">
+          Fundamental<span className="text-primary">.</span>
+          <span
+            aria-hidden="true"
+            className="absolute -bottom-1.5 left-0 h-[3px] w-full -rotate-1 rounded-full bg-gradient-to-r from-primary/30 via-primary/20 to-primary/5"
+          />
+        </p>
+        <button type="button" aria-label="Notifications" className="relative mt-0.5 text-foreground/80">
           <Bell className="size-[22px]" strokeWidth={1.6} />
           <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-destructive" />
         </button>
       </header>
 
-      <div className="mb-5">
-        <h1 className="text-[26px] font-semibold leading-tight tracking-[-0.02em]" suppressHydrationWarning>
+      <div className="mb-4">
+        <h1 className="text-[28px] font-bold leading-tight tracking-[-0.025em]" suppressHydrationWarning>
           {greeting}, {user.name}.
         </h1>
-        <p className="mt-1 text-[14px] text-muted-foreground">Preparing for {user.target}</p>
+        <p className="mt-0.5 text-[15px] text-muted-foreground">Preparing for {user.target}</p>
       </div>
 
       <section aria-label="Streak" className="flex items-center gap-3 rounded-2xl border border-border bg-surface px-3.5 py-3 shadow-soft">
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-warm-soft">
-          <Flame className="size-5 fill-warm text-warm" aria-hidden="true" />
+        <span role="img" aria-label="Streak" className="flex size-9 shrink-0 items-center justify-center rounded-full bg-warm-soft text-[16px] leading-none">
+          🔥
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-[14px] font-medium">{days ? `${days} day${days === 1 ? "" : "s"} streak` : "No streak yet"}</p>
@@ -113,9 +114,11 @@ function Home() {
           ))}
         </div>
         {ws.total === 0 && (
-          <div className="mt-5 flex flex-col items-center pb-1 text-center">
-            <span className="flex size-11 items-center justify-center rounded-xl bg-primary-soft">
+          <div className="mt-4 flex flex-col items-center pb-1 text-center">
+            <span className="relative flex size-11 items-center justify-center rounded-xl bg-primary-soft/60">
               <CalendarDays className="size-6 text-primary/70" strokeWidth={1.5} />
+              <span aria-hidden="true" className="absolute -left-2.5 top-2 h-[2px] w-2 -rotate-[28deg] rounded-full bg-primary/30" />
+              <span aria-hidden="true" className="absolute -right-2.5 top-2 h-[2px] w-2 rotate-[28deg] rounded-full bg-primary/30" />
             </span>
             <p className="mt-2.5 text-[14px] font-medium">No activity yet</p>
             <p className="mt-0.5 text-[12px] text-muted-foreground">Start practicing to see your weekly activity.</p>
@@ -123,22 +126,23 @@ function Home() {
         )}
       </section>
 
-      <Link to="/review" className="tap mt-3.5 flex items-center gap-3.5 rounded-2xl border border-border bg-surface p-4 shadow-soft">
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-soft">
-          <FileText className="size-5 text-primary" strokeWidth={1.8} />
+      <Link to="/review" className="tap mt-3.5 flex items-center gap-3.5 rounded-2xl border border-border bg-surface px-4 py-3.5 shadow-soft">
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+          <FileText className="size-[18px] text-primary" strokeWidth={1.8} />
         </span>
         <div className="min-w-0 flex-1">
-          <p className="text-[15px] font-medium">Needs Review</p>
-          <p className="text-[13px] text-muted-foreground">
+          <p className="text-[14px] font-medium">Needs Review</p>
+          <p className="text-[12.5px] text-muted-foreground">
             {reviewCount ? `${reviewCount} topic${reviewCount === 1 ? "" : "s"} need${reviewCount === 1 ? "s" : ""} another look` : "All caught up"}
           </p>
-          {!reviewCount && <p className="mt-0.5 text-[12px] text-muted-foreground/80">No items yet</p>}
+          {!reviewCount && <p className="mt-0.5 text-[11.5px] text-muted-foreground/80">No items yet</p>}
         </div>
-        <ChevronRight className="size-4 text-muted-foreground" />
+        <ChevronRight className="size-4 text-muted-foreground/70" />
       </Link>
 
-      <section className="mt-3.5 rounded-2xl border border-border bg-primary-soft/40 p-4 shadow-soft">
-        <div className="flex items-center gap-3.5">
+      <section className="relative mt-3.5 overflow-hidden rounded-2xl border border-primary/15 bg-primary-soft/50 p-4 shadow-soft">
+        <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-16 size-44 rotate-12 rounded-[45%] bg-primary/5" />
+        <div className="relative flex items-center gap-3.5">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-[15px] font-semibold text-primary-foreground">
             √x
           </span>
@@ -149,7 +153,7 @@ function Home() {
           </div>
           <ChevronRight className="size-4 text-muted-foreground" />
         </div>
-        <Button asChild size="block" className="mt-3.5">
+        <Button asChild size="block" className="relative mt-3.5">
           <Link
             to="/practice/$examId/$subtestId/$materialId"
             params={{ examId: focus.examId, subtestId: focus.subtestId, materialId: focus.materialId }}
