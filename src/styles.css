@@ -80,6 +80,51 @@
   --shadow-raised: 0 8px 24px -12px oklch(0.2 0.01 260 / 0.22);
 }
 
+/*
+ * Institution accent layer — overrides ONLY accent tokens.
+ * Backgrounds, surfaces, text and borders stay Fundamental. neutral.
+ */
+[data-institution="pknstan"] {
+  --primary: oklch(0.42 0.12 255); --accent: oklch(0.42 0.12 255); --ring: oklch(0.42 0.12 255);
+  --primary-foreground: oklch(0.985 0.004 90); --accent-foreground: oklch(0.985 0.004 90);
+  --primary-soft: oklch(0.94 0.028 255);
+}
+[data-institution="unpad"] {
+  --primary: oklch(0.56 0.16 45); --accent: oklch(0.56 0.16 45); --ring: oklch(0.56 0.16 45);
+  --primary-foreground: oklch(0.985 0.004 90); --accent-foreground: oklch(0.985 0.004 90);
+  --primary-soft: oklch(0.95 0.035 60);
+}
+[data-institution="ui"] {
+  --primary: oklch(0.55 0.11 78); --accent: oklch(0.55 0.11 78); --ring: oklch(0.55 0.11 78);
+  --primary-foreground: oklch(0.985 0.004 90); --accent-foreground: oklch(0.985 0.004 90);
+  --primary-soft: oklch(0.955 0.04 92);
+}
+[data-institution="itb"] {
+  --primary: oklch(0.47 0.16 265); --accent: oklch(0.47 0.16 265); --ring: oklch(0.47 0.16 265);
+  --primary-foreground: oklch(0.985 0.004 90); --accent-foreground: oklch(0.985 0.004 90);
+  --primary-soft: oklch(0.94 0.03 265);
+}
+.dark[data-institution="pknstan"] {
+  --primary: oklch(0.74 0.1 250); --accent: oklch(0.74 0.1 250); --ring: oklch(0.74 0.1 250);
+  --primary-foreground: oklch(0.185 0.006 265); --accent-foreground: oklch(0.185 0.006 265);
+  --primary-soft: oklch(0.3 0.045 255);
+}
+.dark[data-institution="unpad"] {
+  --primary: oklch(0.76 0.14 55); --accent: oklch(0.76 0.14 55); --ring: oklch(0.76 0.14 55);
+  --primary-foreground: oklch(0.185 0.006 265); --accent-foreground: oklch(0.185 0.006 265);
+  --primary-soft: oklch(0.31 0.05 50);
+}
+.dark[data-institution="ui"] {
+  --primary: oklch(0.83 0.13 90); --accent: oklch(0.83 0.13 90); --ring: oklch(0.83 0.13 90);
+  --primary-foreground: oklch(0.185 0.006 265); --accent-foreground: oklch(0.185 0.006 265);
+  --primary-soft: oklch(0.31 0.045 88);
+}
+.dark[data-institution="itb"] {
+  --primary: oklch(0.72 0.13 265); --accent: oklch(0.72 0.13 265); --ring: oklch(0.72 0.13 265);
+  --primary-foreground: oklch(0.185 0.006 265); --accent-foreground: oklch(0.185 0.006 265);
+  --primary-soft: oklch(0.3 0.05 265);
+}
+
 .dark {
   --background: oklch(0.185 0.006 265);
   --foreground: oklch(0.955 0.004 90);

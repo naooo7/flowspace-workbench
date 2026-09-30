@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { bootScript } from "../lib/institution";
 
 function NotFoundComponent() {
   return (
@@ -106,8 +107,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
         <HeadContent />
       </head>
       <body>
